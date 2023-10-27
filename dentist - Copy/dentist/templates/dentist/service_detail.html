@@ -1,0 +1,25 @@
+{% extends 'dentist/_layout.html' %}
+
+{% block dentist_content %}
+
+<div class="content">
+    <div id="content-page" class="main-detail">
+        <div class="column-2 table">
+            
+            <div class="column blue">
+                <h1 class="title">{{ service.name }}</h1>
+                <p>{{ service.description }}</p>
+                <h3>{{ service.price }} czk</h3>
+            </div>
+            
+            <div class="column">
+                <img src="{{ service.img.url }}" alt=""></div>
+            </div>
+
+        </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

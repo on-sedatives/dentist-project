@@ -1,0 +1,26 @@
+{% extends 'dentist/_layout.html' %}
+
+{% block dentist_content %}
+
+<div class="content">
+    <div id="content-page">
+        <div class="column-4">
+
+            {% for service in object_list %}
+                <div class="column">
+                    <a href="{{ service.get_absolute_url }}">
+                        <div class="grey-box">
+                            <img src="{{ service.img.url }}" alt="">
+                        </div>
+                        <h3>{{ service.name }}</h3>
+                    </a>
+                    <!-- <p>{{ service.description }}</p> -->
+
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

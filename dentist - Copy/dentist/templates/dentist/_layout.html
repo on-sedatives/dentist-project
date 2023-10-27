@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>{% load static %}{% load random_numbers %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'dentist/style.css' %}?v={% random_int 10000 99999 %}">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <title>{{ page.name }}</title>
+</head>
+<body>
+
+    {% include 'dentist/include/nav.html' %}
+
+    <div class="wrapper">
+        {% include 'dentist/include/path.html' with title=page.name %}
+
+        {{ page.description }}
+        
+        <div id="page">
+            {% block dentist_content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <footer class="wrapper footer green">
+        <div class="content">
+            All right reserverd {% current_date %}.
+        </div>  
+    </footer>
+</body>
+</html>
