@@ -1,0 +1,20 @@
+
+<header id="boxheader" class="wrapper header">
+    <div id="header" class="header-blur">
+        <div class="content">
+            <div class="header-nav">
+                <a href="/" class="logo"><img src="/media/tooth.png" alt=""></a>
+            </div>
+            <div class="header-nav">
+                {% for page in page_list %}
+                    {% if page.slug == "home" %}
+                        <!-- <a href="/" title="{{ page.name }}">{{ page.name }}</a> -->
+                        
+                    {% else %}
+                        <a href="/{{ page.slug }}/" title="{{ page.name }}">{{ page.name }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</header>

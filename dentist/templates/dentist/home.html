@@ -1,0 +1,50 @@
+{% extends 'dentist/_layout.html' %}
+
+{% block dentist_content %}
+
+<div class="content full-screen title-image home-image">
+    <img src="/media/{{ page.img }}" alt="">
+</div>
+
+<div class="content">
+    <div id="content-page" class="main-detail">
+        <div class="div-center">
+            <h2 class="text-center">our services</h2>
+        </div>
+
+        <div class="column-4">
+            {% for service in object_list %}
+                <div class="column">
+                    <a href="{{ service.get_absolute_url }}">
+                        <div class="greybox-image">
+                            <img src="{{ service.img.url }}" alt="">
+                        </div>
+                        <h3>{{ service.name }}</h3>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="column-2 home-column-2">
+            <div class="column center home-column">
+                <h1>"We can fix anything"</h1>
+            </div>
+            <div class="column column-image">
+                <img src="/media/dentist-in-indian-land-sc.jpg" alt="">
+            </div>
+        </div>
+
+        
+    </div>
+
+</div>
+
+<div class="content full-screen">
+    <div class="map">
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.5914474919605!2d14.43264!3d50.0752125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b948ebbfdd77f%3A0xb7bffc5db09a187b!2sB%C4%9Blehradsk%C3%A1%20479%2F114%2C%20120%2000%20Vinohrady!5e0!3m2!1sen!2scz!4v1698399164710!5m2!1sen!2scz" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+</div>
+
+{% endblock %}
